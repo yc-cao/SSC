@@ -1,6 +1,7 @@
 package com.example.hongkaixiang.kuaihuozedan.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
@@ -16,6 +17,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.hongkaixiang.kuaihuozedan.R;
+import com.example.hongkaixiang.kuaihuozedan.utils.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity {
     private WebView mWebMain;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StatusBarUtil.setStatusBarColor(this,Color.parseColor("#EC2829"));
         initView();
     }
 

@@ -1,6 +1,7 @@
 package com.example.hongkaixiang.kuaihuozedan.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import com.example.hongkaixiang.kuaihuozedan.R;
 import com.example.hongkaixiang.kuaihuozedan.net.RequestInterFace;
 import com.example.hongkaixiang.kuaihuozedan.net.WebUrlBean;
+import com.example.hongkaixiang.kuaihuozedan.utils.StatusBarUtil;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,6 +24,7 @@ public class GuideActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+        StatusBarUtil.setStatusBarColor(this,Color.parseColor("#EC2829"));
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

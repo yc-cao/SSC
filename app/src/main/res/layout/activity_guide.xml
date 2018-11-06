@@ -8,7 +8,20 @@
     <ImageView
         android:id="@+id/iv_guide"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/app_start"
-        android:layout_height="match_parent" />
+        android:src="@drawable/app_start" />
+
+    <!--<com.example.hongkaixiang.kuaihuozedan.view.StatusBarHeightView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--app:use_type="use_padding_top"-->
+        <!--android:layout_height="45dp">-->
+        <!--<View-->
+            <!--android:id="@+id/view_statusbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:padding="@dimen/widget_size_10"-->
+            <!--android:background="#c23219" />-->
+    <!--</com.example.hongkaixiang.kuaihuozedan.view.StatusBarHeightView>-->
 </RelativeLayout>
