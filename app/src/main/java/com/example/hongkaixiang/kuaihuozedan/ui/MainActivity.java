@@ -31,8 +31,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         mWebMain = (WebView) findViewById(R.id.web_main);
+        // 清缓存和记录，缓存引起的白屏
+        mWebMain.clearCache(true);
+        mWebMain.clearHistory();
         WebSettings settings = mWebMain.getSettings();
+
+        // 缓存白屏
+        String appCachePath = getApplicationContext().getCacheDir()
+                .getAbsolutePath() + "/webcache";
+        // 设置 Application Caches 缓存目录
+        settings.setAppCachePath(appCachePath);
+        settings.setDatabasePath(appCachePath);
+
+        settings.setAppCacheEnabled(false);
+        settings.setDomStorageEnabled(true);
         settings.setJavaScriptEnabled(true);
+        settings.setBlockNetworkImage(false);//解决图片不显示
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+        settings.setLoadsImagesAutomatically(true);
         settings.setSupportZoom(false);
         settings.setBuiltInZoomControls(false);
         settings.setDomStorageEnabled(true);
@@ -71,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                super.onReceivedSslError(view, handler, error);
+//                super.onReceivedSslError(view, handler, error);
                 handler.proceed();
             }
         });
 
-        mWebMain.loadUrl("http://wap.minpion.com");
+        mWebMain.loadUrl("http://wap.qblhl.com");
     }
 }
